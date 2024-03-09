@@ -1,6 +1,6 @@
 export const servicesMock = [
   {
-    img: "https://cdn.pixabay.com/photo/2021/07/20/06/19/living-room-6479849_1280.jpg",
+    img: "https://img.freepik.com/fotos-premium/interior-de-casa-de-luxo-com-bela-sala-de-estar-quarto_528398-415.jpg?w=740",
     title: "Móveis Sob Medida",
     subtitle:
       "Pinturas, Marcenaria, Carpintaria, Pedreiro, Ladrilheiro, Vidraceiro",

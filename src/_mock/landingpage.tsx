@@ -9,17 +9,24 @@ export const navigationMenu = [
 export const ratingsMock = [
   {
     userImage: "",
-    user: "Rejane Castro",
-    text: "Super recomendo! Os serviços foram prestados com celeridade e muita qualidade. Preço justo e excelentes materiais. Se não quiser aborrecimentos com serviços residenciais, basta chamar o Dr. Reparo (Eduardo cativa desde o primeiro contato! Eficiente e gentil sempre).",
+    user: "Gabriel Silva",
+    text: "Super Recomendo, adorei o atendimento e com toda certeza voltaria a comprar com a Bella Móveis",
     stars: 5,
     city: "Octogonal - DF",
   },
   {
     userImage: "",
-    user: "Glauter Rocha",
-    text: "A Dr Reparos não oferece apenas serviços, eles entregam soluções. E melhor, não preciso mais de um prestador para cada tipo de serviço, consigo resolver tudo com eles. Estou super satisfeito com tudo que fizeram pra mim até agora, recomendo!!",
+    user: "Elizane Rocha",
+    text: "Atendimento de primeira e um orçamento Toppp!",
+    stars: 4.5,
+    city: "Gama - DF",
+  },
+  {
+    userImage: "",
+    user: "Marlon Oliveira",
+    text: "Fiz a minha cozinha planejada com eles e ficou nota 10",
     stars: 5,
-    city: "Sudoeste - DF",
+    city: "Valparaíso - GO",
   },
 ];
 
