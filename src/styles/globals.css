@@ -1,0 +1,87 @@
+:root {
+}
+
+* {
+  font-family: "Arbutus Slab", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 500px;
+  background-color: #4d3227;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  transition: 0.25s;
+  grid-gap: 5px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.container .box {
+  position: relative;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container:hover .box {
+  filter: grayscale(1);
+}
+
+.container .box:hover {
+  filter: grayscale(0);
+}
+
+.container:has(.one:hover) {
+  grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr 0.5fr;
+}
+.container:has(.two:hover) {
+  grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr;
+}
+.container:has(.tree:hover) {
+  grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr 0.5fr;
+}
+.container:has(.four:hover) {
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 2fr 0.5fr;
+}
+.container:has(.five:hover) {
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 2fr;
+}
+
+.container .box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: -1px;
+  height: calc(100% + 2px);
+  background: linear-gradient(
+    #4d3227,
+    transparent,
+    transparent,
+    transparent,
+    #4d3227
+  );
+}
+
+.container .box:nth-child(even) {
+  transform: translateY(30px);
+}
+
+.container .box:nth-child(odd) {
+  transform: translateY(-30px);
+}
