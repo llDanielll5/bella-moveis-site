@@ -6,18 +6,18 @@ export default function Application() {
   return (
     <Box position="relative">
       <Head>
-        <title>Bella Móveis | Móveis e Planejados</title>
+        <title>Sob Medida | Móveis e Planejados</title>
         <meta
           name="description"
-          content="Bella Móveis - Móveis e Planejados em Valparaíso de Goiás"
+          content="Sob Medida - Móveis e Planejados em Valparaíso de Goiás"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
-          content="moveis, planejados, bella, valparaíso, goiás"
+          content="moveis,planejados,sob,medida,valparaíso,goiás,medida"
         />
         <meta name="robôs" content="index, follow"></meta>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.png" />
       </Head>
 
       <LandingPage />
