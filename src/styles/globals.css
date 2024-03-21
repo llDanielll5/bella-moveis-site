@@ -23,12 +23,12 @@ a {
   display: grid;
   width: 100%;
   height: 900px;
-  background-color: #4d3227;
+  background-color: #8f5e36;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   transition: 0.25s;
   grid-gap: 5px;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
 }
 
 .container .box {
@@ -136,13 +136,53 @@ a {
   top: -1px;
   height: calc(100% + 2px);
   background: linear-gradient(
-    #4d3227,
+    #8f5e36,
     transparent,
     transparent,
     transparent,
-    #4d3227
+    #8f5e36
   );
 }
+
+@media screen and (max-width: 760px) {
+  .container {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .container:has(.one:hover) {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 0.2fr 0.2fr 0.2fr;
+  }
+  .container:has(.two:hover) {
+    grid-template-columns: 100%;
+    grid-template-rows: 0.2fr 1fr 0.2fr 0.2fr;
+  }
+  .container:has(.three:hover) {
+    grid-template-columns: 100%;
+    grid-template-rows: 0.2fr 0.2fr 1fr 0.2fr;
+  }
+  .container:has(.four:hover) {
+    grid-template-columns: 100%;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 1fr;
+  }
+  .container:has(.five:hover) {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .container .box #hovered-one {
+    display: flex;
+  }
+  .container .box #hovered-two {
+    display: flex;
+  }
+  .container .box #hovered-three {
+    display: flex;
+  }
+  .container .box #hovered-four {
+    display: flex;
+  }
+}
+
 /*
 
 .container .box:nth-child(even) {

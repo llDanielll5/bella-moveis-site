@@ -1,6 +1,6 @@
 export const ColorsPallete = {
-  primary: "#4D3227",
-  secondary: "#EBC990",
+  primary: "#8F5E36",
+  secondary: "#FFF2C3",
   tertiary: "#CD7700",
 };
 

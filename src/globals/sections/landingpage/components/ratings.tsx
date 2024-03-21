@@ -5,6 +5,7 @@ import { Avatar, Box, Paper, Rating, Typography, styled } from "@mui/material";
 import { ColorsPallete, FontFamily } from "@/styles/colors";
 import { ratingsMock } from "@/_mock/landingpage";
 import Carousel from "react-elastic-carousel";
+import TitleText from "@/globals/components/title";
 
 const Ratings = () => {
   const breakPoints = [
@@ -16,17 +17,7 @@ const Ratings = () => {
   return (
     <Box id={"ratings"}>
       <Container>
-        <Typography
-          variant="h4"
-          color="white"
-          letterSpacing={".2rem"}
-          my={4}
-          textAlign="center"
-          fontFamily={FontFamily.primary}
-          color={ColorsPallete.secondary}
-        >
-          O que nossos clientes dizem
-        </Typography>
+        <TitleText title="avaliações" textColor={ColorsPallete.primary} />
 
         <StyledCarousel breakPoints={breakPoints}>
           {ratingsMock.map((v, i) => (
@@ -63,6 +54,7 @@ const Container = styled(Box)`
 
 const StyledCarousel = styled(Carousel)`
   align-self: center;
+  padding-top: 3rem;
 `;
 
 const RatingsImage = styled(Avatar)`

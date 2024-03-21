@@ -47,19 +47,25 @@ const Services = () => {
   const hoverRef = useRef<HTMLDivElement>(null);
 
   const mouseHover = (className: string) => {
+    if (width < 760) return;
     let element = document.getElementById(className);
     element?.style.setProperty("display", "flex");
   };
   const mouseExit = (className: string) => {
+    if (width < 760) return;
     let element = document.getElementById(className);
     element?.style.setProperty("display", "none");
   };
 
   return (
     <Box sx={{ backgroundColor: ColorsPallete.primary }} id={"services"}>
-      <Stack pt={4}>
+      <Stack pt={4} alignItems="center">
         <TitleText title="Catálogo" textColor={ColorsPallete.primary} />
+        <Typography variant="caption" color={ColorsPallete.secondary} mt={4}>
+          Clique para saber mais..
+        </Typography>
       </Stack>
+
       <div className="container">
         {dynamicImages.map((item, index) => (
           <div
