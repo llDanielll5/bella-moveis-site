@@ -22,13 +22,13 @@ a {
   position: relative;
   display: grid;
   width: 100%;
-  height: 500px;
+  height: 900px;
   background-color: #4d3227;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   transition: 0.25s;
   grid-gap: 5px;
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
 .container .box {
@@ -38,26 +38,92 @@ a {
   align-items: center;
   justify-content: center;
 }
+/* .container .box .hovered {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.container .box .hovered span {
+  font-size: 3rem;
+} */
+
+.container .box #hovered-one {
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.container .box #hovered-two {
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.container .box #hovered-three {
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.container .box #hovered-four {
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
 
 .container:hover .box {
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
 }
 
 .container .box:hover {
-  filter: grayscale(0);
+  /* filter: grayscale(0); */
 }
 
 .container:has(.one:hover) {
-  grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr;
 }
 .container:has(.two:hover) {
-  grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr;
+  grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr;
 }
-.container:has(.tree:hover) {
-  grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr 0.5fr;
+.container:has(.three:hover) {
+  grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr;
 }
 .container:has(.four:hover) {
-  grid-template-columns: 0.5fr 0.5fr 0.5fr 2fr 0.5fr;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 2fr;
 }
 .container:has(.five:hover) {
   grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 2fr;
@@ -77,6 +143,7 @@ a {
     #4d3227
   );
 }
+/*
 
 .container .box:nth-child(even) {
   transform: translateY(30px);
@@ -84,4 +151,4 @@ a {
 
 .container .box:nth-child(odd) {
   transform: translateY(-30px);
-}
+} */

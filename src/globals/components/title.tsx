@@ -4,6 +4,7 @@ import React from "react";
 
 interface TitleTextProps {
   title: string;
+  textColor?: string;
 }
 
 const TitleText = (props: TitleTextProps) => {
@@ -14,7 +15,12 @@ const TitleText = (props: TitleTextProps) => {
         if (v === " ") return <Box mx={1} />;
         else
           return (
-            <StyledText variant="h4" key={i} textTransform={"uppercase"}>
+            <StyledText
+              variant="h4"
+              key={i}
+              textTransform={"uppercase"}
+              color={props.textColor ?? "white"}
+            >
               {v}
             </StyledText>
           );
@@ -25,16 +31,20 @@ const TitleText = (props: TitleTextProps) => {
 
 const StyledText = styled(Typography)`
   background-color: ${ColorsPallete.secondary};
-  color: white;
-  margin: 0 2px;
+  margin: 0 4px;
   padding: 2px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3rem;
-  width: 3rem;
-  font-size: 1.8rem;
+  height: 4rem;
+  width: 4rem;
+  font-size: 2.2rem;
+  @media screen and (max-width: 1200px) {
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.8rem;
+  }
   @media screen and (max-width: 760px) {
     height: 2rem;
     width: 2rem;

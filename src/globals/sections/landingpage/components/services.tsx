@@ -1,76 +1,65 @@
 //@ts-nocheck
 
 import React, { useRef, useState } from "react";
-import { Box, Button, Typography, styled } from "@mui/material";
+import { Box, Button, Stack, Typography, styled } from "@mui/material";
 import { ColorsPallete } from "@/styles/colors";
 import { servicesMock } from "@/_mock/services";
 import { useRouter } from "next/router";
 import useWindowSize from "@/globals/hooks/useWindowSize";
+import TitleText from "@/globals/components/title";
 
 const dynamicImages = [
   {
     img: "https://img.freepik.com/fotos-premium/interior-elegante-do-apartamento-com-cozinha-moderna-ideia-para-design-de-casa_999766-53.jpg?w=826",
     class: "one",
+    title: "Cozinha",
+    slug: "cozinha",
   },
   {
     img: "https://img.freepik.com/fotos-premium/luxo-piscina-interior-design-villa-na-area-da-cozinha-que-conta-com-balcao-ilha-construido-em-f_41487-174.jpg",
     class: "two",
+    title: "Sala",
+    slug: "sala",
   },
   {
     img: "https://img.freepik.com/fotos-premium/moderna-sala-de-estar-em-casa-espacosa_41487-822.jpg",
-    class: "tree",
+    class: "three",
+    title: "Quartos",
+    slug: "quarto",
   },
   {
     img: "https://img.freepik.com/fotos-premium/sala-de-estar-elegante_305343-5910.jpg",
     class: "four",
+    title: "Escritórios",
+    slug: "escritorio",
   },
-  {
-    img: "https://img.freepik.com/fotos-premium/sala-de-estar-elegante-com-um-sofa-grande-e-confortavel_305343-13234.jpg",
-    class: "five",
-  },
+  // {
+  //   img: "https://img.freepik.com/fotos-premium/sala-de-estar-elegante-com-um-sofa-grande-e-confortavel_305343-13234.jpg",
+  //   class: "five",
+  //   title: ''
+  // },
 ];
 
 const Services = () => {
   const router = useRouter();
   const { width } = useWindowSize();
-  const [currImage, setCurrImage] = useState(servicesMock[0].img);
-  const imageRef = useRef<HTMLImageElement>(null);
+
+  const hoverRef = useRef<HTMLDivElement>(null);
+
+  const mouseHover = (className: string) => {
+    let element = document.getElementById(className);
+    element?.style.setProperty("display", "flex");
+  };
+  const mouseExit = (className: string) => {
+    let element = document.getElementById(className);
+    element?.style.setProperty("display", "none");
+  };
 
   return (
-    <Box sx={{ backgroundColor: "#f4f4f4" }} id={"services"}>
-      <Box sx={{ backgroundColor: ColorsPallete.tertiary }}>
-        <Typography
-          textAlign="center"
-          variant="h4"
-          color="white"
-          fontFamily={"Arbutus Slab"}
-          letterSpacing={".5rem"}
-          p={1}
-        >
-          Catálogo
-        </Typography>
-      </Box>
-
-      <GridContainer>
-        {servicesMock.map((item, index) => (
-          <ContainerServices
-            key={index}
-            id={`div${index + 1}`}
-            onMouseEnter={() => setCurrImage(item.img)}
-          >
-            <InnerText
-              fontFamily="Arbustus Slab"
-              variant="h6"
-              textAlign="center"
-            >
-              {item.title}
-            </InnerText>
-          </ContainerServices>
-        ))}
-
-        <CoverImage src={currImage} ref={imageRef} />
-      </GridContainer>
-
+    <Box sx={{ backgroundColor: ColorsPallete.primary }} id={"services"}>
+      <Stack pt={4}>
+        <TitleText title="Catálogo" textColor={ColorsPallete.primary} />
+      </Stack>
       <div className="container">
         {dynamicImages.map((item, index) => (
           <div
@@ -80,8 +69,15 @@ const Services = () => {
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
+            onClick={() => window.open(`/${item.slug}`)}
             data-text="Texto"
-          ></div>
+            onMouseEnter={(e) => mouseHover(`hovered-${item.class}`)}
+            onMouseLeave={() => mouseExit(`hovered-${item.class}`)}
+          >
+            <div id={`hovered-${item.class}`}>
+              <span>{item.title}</span>
+            </div>
+          </div>
         ))}
       </div>
     </Box>
