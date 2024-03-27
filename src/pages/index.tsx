@@ -19,7 +19,6 @@ export default function Application() {
         <meta name="robôs" content="index, follow"></meta>
         <link rel="icon" href="/images/logo.png" />
       </Head>
-
       <LandingPage />
     </Box>
   );

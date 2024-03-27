@@ -8,7 +8,7 @@ import { whatsappNumber } from "./card-services";
 const Footer = () => {
   const facebookUrl =
     "https://www.facebook.com/profile.php?id=61556356902233&mibextid=ZbWKwL";
-  const instagramUrl = "https://www.instagram.com/bellamoveisval/";
+  const instagramUrl = "https://www.instagram.com/sobmedida_planjenados";
 
   const openFacebook = () => window.open(facebookUrl, "_blank");
   const openInstagram = () => window.open(instagramUrl, "_blank");
@@ -67,7 +67,7 @@ const Footer = () => {
 
 const Container = styled(Box)`
   font-family: "${FontFamily.primary}";
-  width: 100vw;
+  width: 100%;
   padding: 2rem 4rem 4rem 4rem;
   background-color: ${ColorsPallete.primary};
   color: white;

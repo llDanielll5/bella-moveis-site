@@ -17,7 +17,7 @@ interface CardServicesInterface {
   slug: string;
 }
 
-export const whatsappNumber = "556191967884";
+export const whatsappNumber = "556196827346";
 
 const CardServices = (props: CardServicesInterface) => {
   const router = useRouter();

@@ -18,7 +18,6 @@ const Ratings = () => {
     <Box id={"ratings"}>
       <Container>
         <TitleText title="avaliações" textColor={ColorsPallete.primary} />
-
         <StyledCarousel breakPoints={breakPoints}>
           {ratingsMock.map((v, i) => (
             <StyledPaper key={i}>

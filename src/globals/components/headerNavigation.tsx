@@ -1,13 +1,13 @@
 import React from "react";
 import { Box, IconButton, Menu, Typography, styled } from "@mui/material";
-import { ColorsPallete } from "@/styles/colors";
+import { ColorsPallete, FontFamily } from "@/styles/colors";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { navigationMenu } from "@/_mock/landingpage";
 import useWindowSize from "@/globals/hooks/useWindowSize";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const HeaderNavigation = () => {
+const HeaderNavigation = (props: { notNav?: boolean }) => {
   const router = useRouter();
   const { width } = useWindowSize();
 
@@ -19,31 +19,47 @@ const HeaderNavigation = () => {
   return (
     <Container>
       <Logo src={"/images/logo.png"} alt="" onClick={() => router.push("/")} />
-      <Box display="flex" alignItems="center" columnGap={2}>
-        {width! > 760 &&
-          navigationMenu.map((v, i) => (
-            <Link key={i} href={v.href} passHref>
-              <MenuLink variant="h6">{v.text}</MenuLink>
-            </Link>
-          ))}
-        {width! <= 760 && (
-          <IconButton onClick={handleOpenMenu}>
-            <MenuIcon sx={{ fontSize: 30, color: ColorsPallete.secondary }} />
-          </IconButton>
-        )}
-      </Box>
-      <MobileMenu anchorEl={anchorEl} open={open} onClose={handleCloseMenu}>
-        {navigationMenu.map((v, i) => (
-          <LinkContainer
-            passHref
-            href={v.href}
-            key={i}
-            onClick={handleCloseMenu}
+      {props.notNav ? (
+        <Box />
+      ) : (
+        <Box display="flex" alignItems="center" columnGap={2}>
+          {width! > 760 &&
+            navigationMenu.map((v, i) => (
+              <Link key={i} href={v.href} passHref>
+                <MenuLink variant="h6">{v.text}</MenuLink>
+              </Link>
+            ))}
+          {width! <= 760 && (
+            <IconButton onClick={handleOpenMenu}>
+              <MenuIcon sx={{ fontSize: 30, color: ColorsPallete.secondary }} />
+            </IconButton>
+          )}
+        </Box>
+      )}
+      {props.notNav ? (
+        <Box>
+          <Typography
+            variant="h6"
+            fontFamily={FontFamily.primary}
+            color={ColorsPallete.secondary}
           >
-            <MenuLink variant="subtitle1">{v.text}</MenuLink>
-          </LinkContainer>
-        ))}
-      </MobileMenu>
+            Seu Sonho em Sua Casa!
+          </Typography>
+        </Box>
+      ) : (
+        <MobileMenu anchorEl={anchorEl} open={open} onClose={handleCloseMenu}>
+          {navigationMenu.map((v, i) => (
+            <LinkContainer
+              passHref
+              href={v.href}
+              key={i}
+              onClick={handleCloseMenu}
+            >
+              <MenuLink variant="subtitle1">{v.text}</MenuLink>
+            </LinkContainer>
+          ))}
+        </MobileMenu>
+      )}
     </Container>
   );
 };
