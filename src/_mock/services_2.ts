@@ -50,7 +50,7 @@ export const dynamicImages = [
     title: "Escritórios",
     slug: "escritorio",
     images: [
-      "https://img.freepik.com/fotos-gratis/renderizacao-3d-de-um-escritorio-em-casa-moderna_1048-10248.jpg?w=740&t=st=1711503289~exp=1711503889~hmac=02f8ea44e138fe7ba7f615d52eafbda8f56c6d2016e2044766d6c90c992d5ed8",
+      "https://imagens-revista.vivadecora.com.br/uploads/2022/02/Decoracao-com-moveis-planejados-para-home-office-com-estilo-classico-Foto-BY-ArqEDesign.jpg",
       "https://photos.enjoei.com.br/estante-livreiro-dublin-com-4-prateleiras-rud-rack-91069143/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8yODA3MzcyMy8zOTQ4MTY3NzUxZTc5ZGI0OTJmOWJjMWY2YWMyOTE0OC5qcGc",
       "https://a-static.mlcdn.com.br/450x450/mesinha-de-cabeceira-1516-pes-retro-cf-distribuidora/decoremoveisjaci/cf1048-05/4d8d26acb4727862baa147461191c916.jpeg",
       "https://img.freepik.com/fotos-premium/3d-rendering-bela-suite-de-luxo-no-hotel-com-tv-e-mesa-de-trabalho_105762-382.jpg",
