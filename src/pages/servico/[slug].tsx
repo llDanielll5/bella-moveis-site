@@ -8,12 +8,19 @@ import { useRouter } from "next/router";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CreditsFooter from "@/globals/sections/landingpage/components/credits";
 import Head from "next/head";
+import { whatsappNumber } from "@/globals/sections/landingpage/components/card-services";
 
 // import { Container } from './styles';
 
 const ServiceItem: React.FC = () => {
   const router = useRouter();
   const [service, setService] = useState<any | null>(null);
+
+  const msg = `Olá!! Gostaria de saber mais sobre móveis de ${service?.title}!`;
+  const zapHref = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+    msg
+  )}`;
+  const handleOpenZap = () => window.open(zapHref, "_blank");
 
   const getServiceBySlug = useCallback(() => {
     const finder = dynamicImages.find((v) => v.slug === router.query.slug);
@@ -86,7 +93,7 @@ const ServiceItem: React.FC = () => {
           <Button
             variant="contained"
             endIcon={<WhatsAppIcon />}
-            onClick={() => {}}
+            onClick={handleOpenZap}
             sx={{
               fontFamily: FontFamily.primary,
               backgroundColor: "white",

@@ -13,7 +13,7 @@ const Footer = () => {
   const openFacebook = () => window.open(facebookUrl, "_blank");
   const openInstagram = () => window.open(instagramUrl, "_blank");
 
-  const msg = `Olá!! Gostaria de realizar um orçamento com a Bella Móveis!`;
+  const msg = `Olá!! Gostaria de realizar um orçamento com a Sob Medida Móveis!`;
   const zapHref = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
     msg
   )}`;
