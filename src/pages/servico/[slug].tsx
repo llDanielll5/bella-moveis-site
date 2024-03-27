@@ -7,6 +7,7 @@ import { Box, Button, Divider, Stack, Typography, styled } from "@mui/material";
 import { useRouter } from "next/router";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CreditsFooter from "@/globals/sections/landingpage/components/credits";
+import Head from "next/head";
 
 // import { Container } from './styles';
 
@@ -27,6 +28,20 @@ const ServiceItem: React.FC = () => {
 
   return (
     <Container>
+      <Head>
+        <title>Sob Medida | {service?.title}</title>
+        <meta
+          name="description"
+          content="Sob Medida - Móveis e Planejados em Valparaíso de Goiás"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="keywords"
+          content="moveis,planejados,sob,medida,valparaíso,goiás,medida"
+        />
+        <meta name="robôs" content="index, follow"></meta>
+        <link rel="icon" href="/images/logo.png" />
+      </Head>
       <Box p={2}>
         <HeaderNavigation notNav />
         <Divider />
